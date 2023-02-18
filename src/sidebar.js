@@ -1,4 +1,5 @@
 import { loadHome } from "./sidebar-home";
+import { loadProjects } from "./sidebar-projects";
 
 export function createSidebar() {
   const bodyDiv = document.querySelector("#bodyDiv");
@@ -15,7 +16,8 @@ export function createSidebar() {
   loadHome();
 
   //create task list to hold all tasks
-  const sidebarTasks = document.createElement("div");
-  sidebarTasks.id = "sidebarTasks";
-  sidebar.appendChild(sidebarTasks);
+  const sidebarProjects = document.createElement("div");
+  sidebarProjects.id = "sidebarProjects";
+  sidebar.appendChild(sidebarProjects);
+  loadProjects();
 }

@@ -57,6 +57,25 @@ li {
   font-size: 40px;
 }
 
+#taskspace {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+#subheader {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  height: 10%;
+  padding: 0.7rem;
+  margin: 2rem;
+}
+
+#subheader > h2 {
+  margin-left: 5rem;
+}
+
 #main {
   display: flex;
   flex-direction: column;
