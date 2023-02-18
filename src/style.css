@@ -28,10 +28,15 @@ li {
   height: 100%;
 }
 
-#header {
+#headerDiv {
   display: flex;
   flex-direction: row;
-  height: 5rem;
+  align-content: space-between;
+  background-color: grey;
+}
+
+#headerDiv > h1 {
+  margin-left: 2rem;
 }
 
 #bodyDiv {
@@ -45,16 +50,22 @@ li {
   flex-direction: column;
   width: 20%;
   height: 100%;
+  background-color: lightgray;
 }
 
-#sidebarHome {
+#sidebar > div > div > h2 {
+  padding-left: 2rem;
+}
+
+#sidebar > div > div > ol > li {
+  margin: 0 0 1rem 1rem;
+}
+
+#sidebarHome,
+#sidebarProjects {
   display: flex;
   flex-direction: column;
   height: fit-content;
-}
-
-#sidebar > div > div {
-  font-size: 40px;
 }
 
 #taskspace {
@@ -70,18 +81,16 @@ li {
   height: 10%;
   padding: 0.7rem;
   margin: 2rem;
+  background-color: lightgray;
+  border-radius: 4px;
 }
 
 #subheader > h2 {
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 
 #main {
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-div {
-  border: 1px solid red;
 }
