@@ -1,5 +1,5 @@
 import { createSidebar } from "./sidebar";
-import { createTaskspace } from "./tasks";
+import { createTaskspace } from "./taskspace";
 
 export function createBody() {
   const content = document.querySelector("#content");

@@ -1,12 +1,7 @@
-import { loadSubheader } from "./subheader";
-
-export function createTaskspace() {
-  const bodyDiv = document.querySelector("#bodyDiv");
-
-  //create div for editing and displaying tasks
-  const taskspace = document.createElement("div");
-  taskspace.id = "taskspace";
-  bodyDiv.appendChild(taskspace);
-
-  loadSubheader();
+export function task(title, description, dueDate, priority, complete) {
+  this.title = title;
+  this.description = description;
+  this.dueDate = dueDate;
+  this.priority = priority;
+  this.complete = complete;
 }

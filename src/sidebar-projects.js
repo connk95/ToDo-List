@@ -1,3 +1,5 @@
+import { newTask } from "./newTask";
+
 export function loadProjects() {
   const sidebarProjects = document.querySelector("#sidebarProjects");
 
@@ -16,6 +18,11 @@ export function loadProjects() {
   allProjects.appendChild(projectList);
 
   const addProject = document.createElement("li");
+  addProject.id = "addTask";
   addProject.innerHTML = "New Project";
   projectList.appendChild(addProject);
+
+  addProject.addEventListener("click", () => {
+    newTask();
+  });
 }

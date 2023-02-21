@@ -72,6 +72,7 @@ li {
   display: flex;
   flex-direction: column;
   width: 80%;
+  margin: 2rem;
 }
 
 #subheader {
@@ -80,7 +81,6 @@ li {
   justify-content: left;
   height: 10%;
   padding: 0.7rem;
-  margin: 2rem;
   background-color: lightgray;
   border-radius: 4px;
 }
@@ -93,4 +93,23 @@ li {
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+
+#titlePriorityDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+#titlePriorityHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#titlePriorityInput {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 0 auto;
+  width: 100%;
 }
