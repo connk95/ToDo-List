@@ -1,4 +1,6 @@
-import { newTask } from "./newTask";
+//create projects tab to view and add projects
+
+import { newTask } from "./new-task";
 
 export function loadProjects() {
   const sidebarProjects = document.querySelector("#sidebarProjects");
@@ -15,8 +17,10 @@ export function loadProjects() {
   sidebarProjects.appendChild(allProjects);
 
   const projectList = document.createElement("ol");
+  projectList.id = "projectList";
   allProjects.appendChild(projectList);
 
+  //create link to add new task
   const addProject = document.createElement("li");
   addProject.id = "addTask";
   addProject.innerHTML = "New Project";

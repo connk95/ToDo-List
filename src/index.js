@@ -3,5 +3,3 @@ import { createBody } from "./body";
 
 createHeader();
 createBody();
-
-const myTasks = [];

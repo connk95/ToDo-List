@@ -1,7 +1,8 @@
+//create website header
+
 export function createHeader() {
   const content = document.querySelector("#content");
 
-  //create header
   const headerDiv = document.createElement("div");
   headerDiv.id = "headerDiv";
 

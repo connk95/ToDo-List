@@ -1,3 +1,5 @@
+//create sidebar with home tabs and project list
+
 import { loadHome } from "./sidebar-home";
 import { loadProjects } from "./sidebar-projects";
 
