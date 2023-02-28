@@ -3,3 +3,6 @@ import { createBody } from "./body";
 
 createHeader();
 createBody();
+
+//array of all tasks
+export const myTasks = [];

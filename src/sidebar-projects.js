@@ -1,6 +1,7 @@
 //create projects tab to view and add projects
 
 import { newTask } from "./new-task";
+import { myTasks } from "./index";
 
 export function loadProjects() {
   const sidebarProjects = document.querySelector("#sidebarProjects");
@@ -28,5 +29,6 @@ export function loadProjects() {
 
   addProject.addEventListener("click", () => {
     newTask();
+    console.log(myTasks);
   });
 }

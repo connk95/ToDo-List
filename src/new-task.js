@@ -1,8 +1,7 @@
 //create form to add new tasks, and call functions to pussh values to myTasks array
 
-import { pushTask } from "./tasks";
-import { Task } from "./tasks";
-import { myTasks } from "./tasks";
+import { submitProject } from "./tasks";
+import { myTasks } from "./index";
 import { displayTask } from "./display-task";
 
 export function newTask() {
@@ -48,7 +47,8 @@ export function newTask() {
   description.innerHTML = "Description:";
   const descriptionInput = document.createElement("input");
   descriptionInput.id = "descriptionInput";
-  descriptionInput.setAttribute("type", "text");
+  descriptionInput.setAttribute("type", "textarea");
+  descriptionInput.setAttribute("rows", "5");
   descriptionDiv.appendChild(description);
   descriptionDiv.appendChild(descriptionInput);
 
@@ -59,7 +59,7 @@ export function newTask() {
   date.innerHTML = "Date:";
   const dateInput = document.createElement("input");
   dateInput.id = "dateInput";
-  dateInput.setAttribute("type", "datetime-local");
+  dateInput.setAttribute("type", "date");
   dateInput.id = "dateInput";
   dateDiv.appendChild(date);
   dateDiv.appendChild(dateInput);
@@ -76,23 +76,8 @@ export function newTask() {
 
   //push input values to myTask array
   submit.addEventListener("click", () => {
-    titleValue = document.querySelector("#titleInput").value;
-    descriptionValue = document.querySelector("#descriptionInput").value;
-    dateValue = document.querySelector("#dateInput").value;
-    completeValue = false;
-    const priorityCheck = document.querySelector("#priorityInput");
-    if (priorityCheck.checked == false) {
-      priorityValue = false;
-    } else if (readCheck.checked == true) {
-      priorityValue = true;
-    }
-    pushTask(
-      titleValue,
-      descriptionValue,
-      dateValue,
-      priorityValue,
-      completeValue
-    );
+    submitProject();
     displayTask();
+    console.log(myTasks);
   });
 }

@@ -122,13 +122,10 @@ input[type="checkbox"] {
 #descriptionDiv {
   display: flex;
   flex-direction: column;
-
-  height: 10em;
 }
 
-#descriptionInput {
-  height: 100%;
-}
+/* #descriptionInput {
+} */
 
 #taskForm > div {
   margin: 0 2rem 0 2rem;
