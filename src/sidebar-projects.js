@@ -1,7 +1,8 @@
 //create projects tab to view and add projects
 
-import { newTask } from "./new-task";
-import { myTasks } from "./index";
+import { newProject } from "./new-project";
+import { loadSubheader } from "./subheader";
+import { removeForm } from "./new-project";
 
 export function loadProjects() {
   const sidebarProjects = document.querySelector("#sidebarProjects");
@@ -21,14 +22,14 @@ export function loadProjects() {
   projectList.id = "projectList";
   allProjects.appendChild(projectList);
 
-  //create link to add new task
+  //create link to add new project
   const addProject = document.createElement("li");
-  addProject.id = "addTask";
+  addProject.id = "addProject";
   addProject.innerHTML = "New Project";
   projectList.appendChild(addProject);
 
   addProject.addEventListener("click", () => {
-    newTask();
-    console.log(myTasks);
+    loadSubheader(addProject.innerHTML);
+    newProject();
   });
 }

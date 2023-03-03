@@ -17,10 +17,10 @@ export function loadHome() {
   const homeList = document.createElement("ol");
   homeDays.appendChild(homeList);
 
-  //create "all tasks" tab
-  const allTasks = document.createElement("li");
-  allTasks.innerHTML = "All Tasks";
-  homeList.appendChild(allTasks);
+  //create "all projects" tab
+  const allProjects = document.createElement("li");
+  allProjects.innerHTML = "All Projects";
+  homeList.appendChild(allProjects);
 
   //create "today" tab
   const today = document.createElement("li");

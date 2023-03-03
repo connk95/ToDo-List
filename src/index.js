@@ -5,4 +5,4 @@ createHeader();
 createBody();
 
 //array of all tasks
-export const myTasks = [];
+export const myProjects = [];

@@ -1,6 +1,6 @@
 //create subheader for task space
 
-export function loadSubheader() {
+export function loadSubheader(subtitle) {
   const taskspace = document.querySelector("#taskspace");
 
   const subheader = document.createElement("div");
@@ -8,7 +8,7 @@ export function loadSubheader() {
 
   const taskName = document.createElement("h2");
   taskName.id = taskName;
-  taskName.innerHTML = "temp"; //current tab; Today, New Project, etc
+  taskName.innerHTML = `${subtitle}`;
   subheader.appendChild(taskName);
 
   taskspace.appendChild(subheader);

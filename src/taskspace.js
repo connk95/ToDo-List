@@ -9,6 +9,4 @@ export function createTaskspace() {
   const taskspace = document.createElement("div");
   taskspace.id = "taskspace";
   bodyDiv.appendChild(taskspace);
-
-  loadSubheader();
 }

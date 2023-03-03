@@ -1,6 +1,6 @@
-import { myTasks } from "./index";
+import { myProjects } from "./index";
 
-//factory function to make tasks
+//factory function to make projects
 export const makeProject = (
   title,
   description,
@@ -17,12 +17,6 @@ export const makeProject = (
   return project;
 };
 
-//push tasks to array
-export function pushTask(title, description, dueDate, priority, complete) {
-  let newProject = makeProject(title, description, dueDate, priority, complete);
-  myTasks.push(newProject);
-}
-
 //retrieve values for object
 export function submitProject() {
   let titleValue = document.querySelector("#titleInput").value;
@@ -34,11 +28,13 @@ export function submitProject() {
   if (priorityCheck.checked == true) {
     priorityValue = true;
   }
-  pushTask(
+  let newProject = makeProject(
     titleValue,
     descriptionValue,
     dateValue,
     priorityValue,
     completeValue
   );
+  console.log(newProject);
+  myProjects.push(newProject);
 }

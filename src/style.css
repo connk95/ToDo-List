@@ -64,7 +64,7 @@ p {
 }
 
 #sidebar > div > div > ol > li {
-  margin: 0 0 1rem 1rem;
+  margin: 0 0 1rem 0.5rem;
 }
 
 #sidebarHome,
@@ -81,18 +81,18 @@ p {
   margin: 2rem;
 }
 
+#taskspace > div > p {
+  margin-left: 2.7rem;
+}
+
 #subheader {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: space-between;
   height: 10%;
-  padding: 0.7rem;
+  padding: 0.7rem 2.7rem 0.7rem 2.7rem;
   background-color: lightgray;
   border-radius: 4px;
-}
-
-#subheader > h2 {
-  margin-left: 2rem;
 }
 
 #main {
@@ -123,9 +123,6 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
 }
-
-/* #descriptionInput {
-} */
 
 #taskForm > div {
   margin: 0 2rem 0 2rem;
