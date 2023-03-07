@@ -6,7 +6,8 @@ export const makeProject = (
   description,
   dueDate,
   priority,
-  complete
+  complete,
+  tasks
 ) => {
   const project = {};
   project.title = title;
@@ -14,6 +15,7 @@ export const makeProject = (
   project.dueDate = dueDate;
   project.priority = priority;
   project.complete = complete;
+  project.tasks = [];
   return project;
 };
 
@@ -28,12 +30,15 @@ export function submitProject() {
   if (priorityCheck.checked == true) {
     priorityValue = true;
   }
+  let tasksArray = [];
+
   let newProject = makeProject(
     titleValue,
     descriptionValue,
     dateValue,
     priorityValue,
-    completeValue
+    completeValue,
+    `${titleValue}Tasks`
   );
   console.log(newProject);
   myProjects.push(newProject);

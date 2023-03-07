@@ -1,4 +1,4 @@
-//create form to add new projects, and call functions to pussh values to myProjects array
+//create form to add both new projects and tasks, and call functions to push values to myProjects array
 
 import { submitProject } from "./projects";
 import { displayNewProject } from "./display-newproject";
@@ -72,13 +72,23 @@ export function newProject() {
   taskForm.appendChild(dateDiv);
   taskForm.appendChild(submit);
 
-  //form submission
-  submit.addEventListener("click", handleForm);
+  //project form submission
+  submit.addEventListener("click", handleProjectForm);
+
+  //task form submission
+  submit.addEventListener("click", handleTaskForm);
 
   //event handler for form submit (prevent page refresh & clear display)
-  function handleForm(event) {
+  function handleProjectForm(event) {
     submitProject();
     displayNewProject();
+    event.preventDefault();
+    removeForm();
+  }
+
+  function handleTaskForm(event) {
+    submitTask();
+    displayNewTask();
     event.preventDefault();
     removeForm();
   }
