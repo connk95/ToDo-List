@@ -3,6 +3,7 @@
 import { submitProject } from "./projects";
 import { displayNewProject } from "./display-newproject";
 import { submitTask } from "./tasks";
+import { displayTaskInfo } from "./display-task";
 
 export function newProject() {
   const taskspace = document.querySelector("#taskspace");
@@ -87,9 +88,7 @@ export function newProject() {
       removeForm();
     } else if (subtitle.innerHTML !== "New Project") {
       submitTask();
-      displayNewTask();
       event.preventDefault();
-      removeForm();
     }
   }
 }

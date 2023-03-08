@@ -13,7 +13,6 @@ export const makeTask = (title, description, dueDate, priority, complete) => {
 
 //retrieve values for object
 export function submitTask() {
-  let currentProject = document.querySelector("#subtitle").value;
   let titleValue = document.querySelector("#titleInput").value;
   let descriptionValue = document.querySelector("#descriptionInput").value;
   let dateValue = document.querySelector("#dateInput").value;
@@ -32,8 +31,10 @@ export function submitTask() {
     completeValue
   );
 
+  const currentProject = document.querySelector("#subtitle").innerHTML;
   let obj = myProjects.find((o) => o.title === currentProject);
   console.log(newTask);
   console.log(obj);
   myProjects.push(obj.tasks);
+  displayTaskInfo(currentProject);
 }
