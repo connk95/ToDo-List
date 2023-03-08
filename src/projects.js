@@ -37,8 +37,7 @@ export function submitProject() {
     descriptionValue,
     dateValue,
     priorityValue,
-    completeValue,
-    `${titleValue}Tasks`
+    completeValue
   );
   console.log(newProject);
   myProjects.push(newProject);

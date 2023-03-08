@@ -1,0 +1,13 @@
+import { newProject } from "./new-project";
+import { myProjects } from "./index";
+
+export function displayTaskInfo(title, desc, time) {
+  let obj = myProjects.find((o) => o.title === title);
+
+  const taskDiv = document.getElementById(`${title}List`);
+  const taskDesc = document.createElement("div");
+  const thisDesc = document.createElement("p");
+  thisDesc.innerHTML = `${obj.desc}`;
+  taskDesc.appendChild(thisDesc);
+  taskDiv.appendChild(taskDesc);
+}

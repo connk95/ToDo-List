@@ -2,6 +2,7 @@
 
 import { submitProject } from "./projects";
 import { displayNewProject } from "./display-newproject";
+import { submitTask } from "./tasks";
 
 export function newProject() {
   const taskspace = document.querySelector("#taskspace");
@@ -73,24 +74,23 @@ export function newProject() {
   taskForm.appendChild(submit);
 
   //project form submission
-  submit.addEventListener("click", handleProjectForm);
+  submit.addEventListener("click", handleForm);
 
-  //task form submission
-  submit.addEventListener("click", handleTaskForm);
+  //event handler for project & task form submission (prevent page refresh & clear display)
+  const subtitle = document.querySelector("#subtitle");
 
-  //event handler for form submit (prevent page refresh & clear display)
-  function handleProjectForm(event) {
-    submitProject();
-    displayNewProject();
-    event.preventDefault();
-    removeForm();
-  }
-
-  function handleTaskForm(event) {
-    submitTask();
-    displayNewTask();
-    event.preventDefault();
-    removeForm();
+  function handleForm(event) {
+    if (subtitle.innerHTML == "New Project") {
+      submitProject();
+      displayNewProject();
+      event.preventDefault();
+      removeForm();
+    } else if (subtitle.innerHTML !== "New Project") {
+      submitTask();
+      displayNewTask();
+      event.preventDefault();
+      removeForm();
+    }
   }
 }
 

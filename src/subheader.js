@@ -7,7 +7,7 @@ export function loadSubheader(subtitle) {
   subheader.id = "subheader";
 
   const taskName = document.createElement("h2");
-  taskName.id = taskName;
+  taskName.id = "subtitle";
   taskName.innerHTML = `${subtitle}`;
   subheader.appendChild(taskName);
 

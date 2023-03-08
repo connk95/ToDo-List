@@ -1,13 +1,11 @@
-import { myProjects } from "./index";
 import { newProject } from "./new-project";
-import { taskForm } from "./new-task";
 import { loadSubheader } from "./subheader";
 
 export function displayProject(title) {
   loadSubheader(title);
 }
 
-export function displayInfo(desc, time) {
+export function displayProjectInfo(title, desc, time) {
   const taskspace = document.querySelector("#taskspace");
   const descDiv = document.createElement("div");
   const thisDesc = document.createElement("p");
@@ -23,6 +21,7 @@ export function displayInfo(desc, time) {
   subheader.appendChild(dueDiv);
 
   const taskList = document.createElement("ol");
+  taskList.id = `${title}List`;
   const addTask = document.createElement("li");
   addTask.id = "addTask";
   addTask.innerHTML = "New Task";
