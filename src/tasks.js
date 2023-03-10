@@ -1,4 +1,5 @@
 import { myProjects } from "./index";
+import { displayTaskInfo } from "./display-task";
 
 //factory function to make projects
 export const makeTask = (title, description, dueDate, priority, complete) => {
@@ -32,9 +33,14 @@ export function submitTask() {
   );
 
   const currentProject = document.querySelector("#subtitle").innerHTML;
-  let obj = myProjects.find((o) => o.title === currentProject);
-  console.log(newTask);
-  console.log(obj);
-  myProjects.push(obj.tasks);
-  displayTaskInfo(currentProject);
+  for (let i = myProjects.length - 1; i < myProjects.length; i++) {
+    if (myProjects[i].title === currentProject) {
+      let taskArray = myProjects[i].tasks;
+      taskArray.push(newTask);
+    }
+    console.log(newTask);
+    console.log(myProjects[i]);
+
+    displayTaskInfo(currentProject);
+  }
 }

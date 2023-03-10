@@ -18,7 +18,11 @@ function addListener(title) {
     displayProject(title);
     for (let i = myProjects.length - 1; i < myProjects.length; i++) {
       if (myProjects[i].title === title) {
-        displayProjectInfo(myProjects[i].description, myProjects[i].dueDate);
+        displayProjectInfo(
+          myProjects[i].title,
+          myProjects[i].description,
+          myProjects[i].dueDate
+        );
       }
     }
   });
