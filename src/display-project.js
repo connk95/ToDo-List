@@ -1,3 +1,4 @@
+import { projectComplete } from "./complete";
 import { newProject } from "./new-project";
 import { loadSubheader } from "./subheader";
 
@@ -8,9 +9,19 @@ export function displayProject(title) {
 export function displayProjectInfo(title, desc, time) {
   const taskspace = document.querySelector("#taskspace");
   const descDiv = document.createElement("div");
+  descDiv.id = "taskDesc";
   const thisDesc = document.createElement("p");
+  thisDesc.id = "projectDesc";
   thisDesc.innerHTML = `${desc}`;
+  const finishProject = document.createElement("button");
+  finishProject.innerHTML = "Complete";
+  finishProject.id = `${title}Complete`;
+  finishProject.addEventListener("click", () => {
+    console.log(title);
+    projectComplete(title);
+  });
   descDiv.appendChild(thisDesc);
+  descDiv.appendChild(finishProject);
   taskspace.appendChild(descDiv);
 
   const subheader = document.querySelector("#subheader");

@@ -89,13 +89,18 @@ export function newProject() {
     } else if (subtitle.innerHTML !== "New Project") {
       submitTask();
       event.preventDefault();
+      removeForm();
     }
   }
 }
 
 //clear form display
 export function removeForm() {
-  while (taskspace.firstChild) {
+  if (document.querySelector("#subtitle").innerHTML === "New Project") {
+    while (taskspace.firstChild) {
+      taskspace.removeChild(taskspace.lastChild);
+    }
+  } else {
     taskspace.removeChild(taskspace.lastChild);
   }
 }
