@@ -1,3 +1,4 @@
+import { updateLocalStorage } from ".";
 import { projectComplete } from "./complete";
 import { newProject } from "./new-project";
 import { loadSubheader } from "./subheader";
@@ -17,8 +18,8 @@ export function displayProjectInfo(title, desc, time) {
   finishProject.innerHTML = "Complete";
   finishProject.id = `${title}Complete`;
   finishProject.addEventListener("click", () => {
-    console.log(title);
     projectComplete(title);
+    updateLocalStorage();
   });
   descDiv.appendChild(thisDesc);
   descDiv.appendChild(finishProject);

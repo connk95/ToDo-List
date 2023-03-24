@@ -4,6 +4,7 @@ import { submitProject } from "./projects";
 import { displayNewProject } from "./display-newproject";
 import { submitTask } from "./tasks";
 import { displayTaskInfo } from "./display-task";
+import { updateLocalStorage } from ".";
 
 export function newProject() {
   const taskspace = document.querySelector("#taskspace");
@@ -83,24 +84,31 @@ export function newProject() {
   function handleForm(event) {
     if (subtitle.innerHTML == "New Project") {
       submitProject();
+      updateLocalStorage();
       displayNewProject();
       event.preventDefault();
-      removeForm();
+      clearPage();
     } else if (subtitle.innerHTML !== "New Project") {
       submitTask();
+      updateLocalStorage();
       event.preventDefault();
-      removeForm();
+      clearForm();
     }
   }
 }
 
 //clear form display
-export function removeForm() {
-  if (document.querySelector("#subtitle").innerHTML === "New Project") {
+export function clearPage() {
+  if (document.querySelector("#taskspace").childElementCount === 0) {
+    return;
+  } else if (document.querySelector("#subtitle").innerHTML !== null) {
     while (taskspace.firstChild) {
       taskspace.removeChild(taskspace.lastChild);
     }
-  } else {
-    taskspace.removeChild(taskspace.lastChild);
   }
+}
+
+export function clearForm() {
+  const taskspace = document.querySelector("#taskspace");
+  taskspace.removeChild(taskspace.lastChild);
 }

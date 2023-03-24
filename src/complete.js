@@ -1,12 +1,13 @@
 import { displayNewProject } from "./display-newproject";
-import { myProjects } from "./index";
+import { myProjects, updateLocalStorage } from "./index";
 
 export function projectComplete(projectTitle) {
   if (confirm("Complete this project?") == true) {
-    for (let i = myProjects.length - 1; i < myProjects.length; i++) {
+    for (let i = 0; i < myProjects.length; i++) {
       if (myProjects[i].title === projectTitle) {
         myProjects.splice(i, 1);
         updateProjects(projectTitle);
+        updateLocalStorage();
         const taskspace = document.querySelector("#taskspace");
         while (taskspace.firstChild) {
           taskspace.removeChild(taskspace.firstChild);
@@ -20,13 +21,14 @@ export function projectComplete(projectTitle) {
 
 export function taskComplete(projectTitle, taskTitle) {
   if (confirm("Complete this task?") == true) {
-    for (let i = myProjects.length - 1; i < myProjects.length; i++) {
+    for (let i = 0; i < myProjects.length; i++) {
       if (myProjects[i].title === projectTitle) {
         let taskArray = myProjects[i].tasks;
-        for (let j = taskArray.length - 1; j < taskArray.length; j++) {
+        for (let j = 0; j < taskArray.length; j++) {
           if (taskArray[j].title === taskTitle) {
             taskArray.splice(j, 1);
             updateTasks(taskTitle);
+            updateLocalStorage();
           }
         }
       }
@@ -37,11 +39,11 @@ export function taskComplete(projectTitle, taskTitle) {
 }
 
 function updateProjects(projectTitle) {
-  let thisTitle = document.querySelector(`#${projectTitle}`);
+  const thisTitle = document.querySelector(`#${projectTitle}`);
   thisTitle.remove();
 }
 
 function updateTasks(taskTitle) {
-  let thisTitle = document.querySelector(`#${taskTitle}Div`);
+  const thisTitle = document.querySelector(`#${taskTitle}Div`);
   thisTitle.remove();
 }

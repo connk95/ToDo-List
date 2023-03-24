@@ -2,7 +2,7 @@
 
 import { newProject } from "./new-project";
 import { loadSubheader } from "./subheader";
-import { removeForm } from "./new-project";
+import { clearPage } from "./new-project";
 
 export function loadProjects() {
   const sidebarProjects = document.querySelector("#sidebarProjects");
@@ -29,6 +29,7 @@ export function loadProjects() {
   projectList.appendChild(addProject);
 
   addProject.addEventListener("click", () => {
+    clearPage();
     loadSubheader(addProject.innerHTML);
     newProject();
   });
