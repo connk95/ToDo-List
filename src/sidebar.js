@@ -11,7 +11,7 @@ export function createSidebar() {
   sidebar.id = "sidebar";
   bodyDiv.appendChild(sidebar);
 
-  // //create home div for periods of projects **for future version**
+  // //create home div for periods of projects
   // const sidebarHome = document.createElement("div");
   // sidebarHome.id = "sidebarHome";
   // sidebar.appendChild(sidebarHome);
