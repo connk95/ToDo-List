@@ -8,6 +8,7 @@ createBody();
 //array of all tasks
 export const myProjects = [];
 
+//import local data on page load
 (() => {
   const storedProjects = JSON.parse(localStorage.getItem("projects"));
 

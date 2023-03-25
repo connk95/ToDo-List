@@ -7,6 +7,7 @@ export function displayProject(title) {
   loadSubheader(title);
 }
 
+//display project in body
 export function displayProjectInfo(title, desc, time) {
   const taskspace = document.querySelector("#taskspace");
   const descDiv = document.createElement("div");

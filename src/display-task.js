@@ -1,8 +1,7 @@
-import { newProject } from "./new-project";
 import { myProjects } from "./index";
-import { removeForm } from "./new-project";
 import { taskComplete } from "./complete";
 
+//display new task on project page
 export function displayTaskInfo(projectTitle) {
   for (let i = myProjects.length - 1; i < myProjects.length; i++) {
     if (myProjects[i].title === projectTitle) {

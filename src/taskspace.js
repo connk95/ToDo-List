@@ -1,7 +1,4 @@
 //create task space and load dynamic subheader
-
-import { loadSubheader } from "./subheader";
-
 export function createTaskspace() {
   const bodyDiv = document.querySelector("#bodyDiv");
 

@@ -47,6 +47,7 @@ export function displayNewProject() {
 //   }
 // }
 
+//add event listener to sidebar projects
 function addListener(title) {
   let thisProject = document.getElementById(`${title}`);
   thisProject.addEventListener("click", () => {

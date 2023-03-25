@@ -1,6 +1,6 @@
-import { displayNewProject } from "./display-newproject";
 import { myProjects, updateLocalStorage } from "./index";
 
+//project complete button with check
 export function projectComplete(projectTitle) {
   if (confirm("Complete this project?") == true) {
     for (let i = 0; i < myProjects.length; i++) {
@@ -19,6 +19,7 @@ export function projectComplete(projectTitle) {
   }
 }
 
+//task complete button with check
 export function taskComplete(projectTitle, taskTitle) {
   if (confirm("Complete this task?") == true) {
     for (let i = 0; i < myProjects.length; i++) {
@@ -38,6 +39,7 @@ export function taskComplete(projectTitle, taskTitle) {
   }
 }
 
+//remove project or task from page
 function updateProjects(projectTitle) {
   const thisTitle = document.querySelector(`#${projectTitle}`);
   thisTitle.remove();

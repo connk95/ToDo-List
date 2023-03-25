@@ -3,9 +3,9 @@
 import { submitProject } from "./projects";
 import { displayNewProject } from "./display-newproject";
 import { submitTask } from "./tasks";
-import { displayTaskInfo } from "./display-task";
 import { updateLocalStorage } from ".";
 
+//input date to create a new project or task
 export function newProject() {
   const taskspace = document.querySelector("#taskspace");
 
@@ -97,7 +97,7 @@ export function newProject() {
   }
 }
 
-//clear form display
+//clear all elements from body
 export function clearPage() {
   if (document.querySelector("#taskspace").childElementCount === 0) {
     return;
@@ -108,6 +108,7 @@ export function clearPage() {
   }
 }
 
+//clear form from body
 export function clearForm() {
   const taskspace = document.querySelector("#taskspace");
   taskspace.removeChild(taskspace.lastChild);
