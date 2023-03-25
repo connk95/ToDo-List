@@ -1,6 +1,7 @@
 import { createHeader } from "./header";
 import { createBody } from "./body";
 import { displayNewProject } from "./display-newproject";
+import "./style.css";
 
 createHeader();
 createBody();
